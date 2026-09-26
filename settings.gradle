@@ -1,0 +1,20 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
+    }
+}
+dependencyResolutionManagement {
+    repositories {
+        google()
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        mavenCentral()
+        maven { url 'https://maven.aliyun.com/repository/google' }
+    }
+}
+rootProject.name = 'android-settings-browser'
+include ':app'

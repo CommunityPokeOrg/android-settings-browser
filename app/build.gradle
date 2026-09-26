@@ -1,0 +1,28 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'org.communitypoke.settingsbrowser'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'org.communitypoke.settingsbrowser'
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName '1.0'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+
+dependencies {
+    compileOnly 'io.github.libxposed:api:101.0.1'
+    compileOnly 'androidx.fragment:fragment:1.6.2'
+    compileOnly 'androidx.preference:preference:1.2.1'
+    compileOnly 'androidx.annotation:annotation:1.7.1'
+}
