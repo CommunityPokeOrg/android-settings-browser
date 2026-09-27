@@ -31,8 +31,8 @@ import java.net.URLEncoder;
 import java.util.List;
 
 /**
- * The embedded browser screen. Lives inside com.android.settings, so its
- * WebView shares the Settings app's process, permissions and storage.
+ * The browser screen. Hosted by the standalone app's MainActivity; privileged
+ * bridge calls run through the persistent root shell (RootDaemon).
  */
 public class BrowserFragment extends Fragment {
 
@@ -196,8 +196,8 @@ public class BrowserFragment extends Fragment {
         StringBuilder rows = new StringBuilder();
         List<Extension> all = store.list();
         if (all.isEmpty()) {
-            rows.append("<p class=dim>No extensions installed. Manage them under "
-                    + "Settings &rarr; System &rarr; Browser extensions.</p>");
+            rows.append("<p class=dim>No extensions installed. Tap "
+                    + "<b>Ext</b> in the toolbar to manage them.</p>");
         }
         for (Extension e : all) {
             rows.append("<li>")
@@ -214,10 +214,11 @@ public class BrowserFragment extends Fragment {
                 + ".on{color:#7fdb9a}.off{color:#e0816f}code{background:#2a2a30;"
                 + "padding:1px 5px;border-radius:4px}</style></head><body>"
                 + "<h1>Settings Browser</h1>"
-                + "<p class=dim>This WebView runs inside the Settings process. "
-                + "Page scripts and extensions can call "
+                + "<p class=dim>This WebView runs in the standalone Settings "
+                + "Browser app; privileged calls are executed by a persistent "
+                + "root shell (su). Page scripts and extensions can call "
                 + "<code>SettingsBrowser.*</code> (openSetting, getSetting, "
-                + "putSetting, getProp, exec, kvGet/kvSet).</p>"
+                + "putSetting, getProp, exec, execRoot, kvGet/kvSet).</p>"
                 + "<h2>Extensions</h2><ul>" + rows + "</ul>"
                 + "</body></html>";
         webView.loadDataWithBaseURL("https://settings.browser/", html,

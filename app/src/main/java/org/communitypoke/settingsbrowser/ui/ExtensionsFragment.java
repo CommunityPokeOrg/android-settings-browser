@@ -34,7 +34,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Extension management screen, placed under Settings &gt; System.
+ * Extension management screen, shown inside the standalone app.
  * Lists installed extensions with enable toggles, supports importing
  * userscript-style .js files via the system picker, deleting, and installing
  * the bundled samples.

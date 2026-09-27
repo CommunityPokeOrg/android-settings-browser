@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Settings Browser</string>
-    <string name="module_description">Embeds a WebView browser and a JavaScript extension engine inside the Android Settings app. Requires a rooted device with an Xposed framework (LSPosed) that supports the modern Xposed API.</string>
+    <string name="app_description">Standalone root app: a WebView browser with a JavaScript extension engine and a privileged JS bridge backed by a persistent su root shell. No Xposed/LSPosed required.</string>
 </resources>

@@ -19,9 +19,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Persistence for extensions. Everything lives in the Settings app's private
- * storage (both the management page and the browser run in that process), under
- * files/settings_browser/:
+ * Persistence for extensions. Everything lives in the app's private storage
+ * under files/settings_browser/:
  *   index.json        extension metadata array
  *   exts/<id>.js      extension source
  *   kv/<id>.json      per-extension key/value storage exposed to page scripts
